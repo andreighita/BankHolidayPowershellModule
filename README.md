@@ -32,6 +32,8 @@ If you want the module to be available to the current user only, then extract th
 
 Do not extract the contents of the *BankHoliday* folder directly under *Modules*. Please the whole *BankHoliday* folder in the *Modules* folder instead.
 
+![Modules Folder](https://github.com/andreighita/BankHolidayPowershellModule/blob/main/Artefacts/ModulesFolder.PNG?raw=true)
+
 # Module folder contents
 
 The module folder contains the .psm1 PowerShell module and the .psd1 PowerShell module manifest. 
@@ -42,6 +44,8 @@ The HOL file contains 41 csv files created based on the .HOL files the Microsoft
 
 The locales included are *Arabic (Saudi Arabia)*, *Bulgarian (Bulgaria)*, *Chinese (Simplified,  PRC)*, *Chinese (Traditional,  Taiwan)*, *Croatian (Croatia)*, *Czech (Czech Republic)*, *Danish (Denmark)*, *Dutch (Netherlands)*, *English (United States)*, *Estonian (Estonia)*, *Finnish (Finland)*, *French (France)*, *German (Germany)*, *Greek (Greece)*, *Hebrew (Israel)*, *Hindi (India)*, *Hungarian (Hungary)*, *Indonesian (Indonesia)*, *Italian (Italy)*, *Japanese (Japan)*, *Kazakh (Kazakhstan)*, *Korean (Korea)*, *Latvian (Latvia)*, *Lithuanian (Lithuania)*, *Malay (Malaysia)*, *Norwegian,  Bokmål (Norway)*, *Polish (Poland)*, *Portuguese (Brazil)*, *Portuguese (Portugal)*, *Romanian (Romania)*, *Russian (Russia)*, *Serbian (Latin,  Serbia and Montenegro (Former))*, *Serbian (Latin,  Serbia)*, *Slovak (Slovakia)*, *Slovenian (Slovenia)*, *Spanish (Spain)*, *Swedish (Sweden)*, *Thai (Thailand)*, *Turkish (Turkey)*, *Ukrainian (Ukraine)*, *Vietnamese (Vietnam)*.
 
+![Modules Folder Contents](https://github.com/andreighita/BankHolidayPowershellModule/blob/main/Artefacts/ModulesFolderContents.PNG?raw=true)
+
 # Using the functions exposed by the module
 
 For information on how to run the three bank holiday related functions please run the following commands to read the help information and examples for each function:
@@ -51,7 +55,7 @@ Get-Help Add-BankHoliday -ShowWindow
 Get-Help Get-BankHoliday -ShowWindow
 Get-Help Remove-BankHoliday -ShowWindow
 ```
-
+![Get Help](https://github.com/andreighita/BankHolidayPowershellModule/blob/main/Artefacts/Add-BankHoliday_Get-Help.PNG)
 For a GUI - visual editor of the commands and to make sure you match the various parameters to the correct parameter sets please use one of the following commands:
 
 ```sh
@@ -59,7 +63,7 @@ Show-Command Add-BankHoliday
 Show-Command Get-BankHoliday
 Show-Command Remove-BankHoliday
 ```
-
+![Show Command](https://github.com/andreighita/BankHolidayPowershellModule/blob/main/Artefacts/Add-BankHoliday_ShowCommand.PNG)
 # Optional Parameters
 
 If you have deployed the module files in one of the Module folders on your machine as per the instructions, you do not need to specify the *EWSManagedAPIPath*, *MSALNetDllPath*, *HolFolderPath* parameters or their values. The code behind each function will look up the required files automatically in the Module folders on your system.  
