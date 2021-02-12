@@ -69,3 +69,7 @@ Show-Command Remove-BankHoliday
 If you have deployed the module files in one of the Module folders on your machine as per the instructions, you do not need to specify the *EWSManagedAPIPath*, *MSALNetDllPath*, *HolFolderPath* parameters or their values. The code behind each function will look up the required files automatically in the Module folders on your system.  
 # License
 MIT
+
+# Disclaimer
+
+This is NOT something supported by Microsoft Customer Service and Support. If you're on this page, using this script, you're on your own!
