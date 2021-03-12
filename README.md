@@ -78,27 +78,27 @@ The module as is, uses an application registration that I have created. It can b
 The alternative is for your Azure administrator to create a new app registration for your tenant alone. 
 
 Please find the procedure below: 
-1.	Log in to https://portal.azure.com with an Azure administrator account and navigate to the Azure Active Directory settings 
-2.	Click on App registrations
-3.	Select New registration
-4.	Give your new app registration a suggestive name and configure the settings as indicated in the screenshot below, then click Register
-5.	Make a note of the Application (client) ID as you will require this when you run the BankHoliday module commands
-6.	Click on View API permissions
-7.	Click on Add a permission
-8.	Select Microsoft Graph
-9.	Select Delegated permissions, type EWS in the search field and select the EWS.AccessAsUser.All permission
-10.	Click Add permissions
-11.	Click Grant admin consent… 
-12.	Once this is done, you will need to specify the ClientId and RedirectUri parameters when running the Get, Add or Remove bank holiday cmdlets. For example:  
+1.	Log in to https://portal.azure.com with an Azure administrator account and navigate to the **Azure Active Directory** settings 
+2.	Click on **App registrations**
+3.	Select **New registration**
+4.	Give your new app registration a suggestive name and configure the redirect URI for a **Public client/native (mobile...** and set the value to **https://localhost**, then click **Register**
+5.	Make a note of the **Application (client) ID** as you will require this when you run the BankHoliday module commands
+6.	Click on **View API permissions**
+7.	Click on **Add a permission**
+8.	Select **Microsoft Graph**
+9.	Select **Delegated permissions**, type **EWS** in the search field and select the **EWS.AccessAsUser.All** permission
+10.	Click **Add permissions**
+11.	Click **Grant admin consent… **
+12.	Once this is done, you will need to specify the **ClientId** and **RedirectUri** parameters when running the Get, Add or Remove bank holiday cmdlets. For example:  
 Get-BankHoliday -EmailAddress SomeAccount@Contoso.Com -ClientId 0fb843f5-7b24-46c8-924b-3fd0509e44c5 -CountryName (United Kingdom) -Culture "English (United States)" -RedirectUri https://localhost -TenantId contoso.com
 
 ## Connecting to other mailboxes 
 
 In order to run the Get, Add or Remove commands against multiple mailboxes, an Exchange Online administrator will also need to grant Exchange Impersonation permissions to the account you’re intending on using to connect to the mailboxes. For example, if you’re planning on using the SomeAccount@Contoso.Com account to import bank holidays to multiple mailboxes, this account will need to be granted Exchange Impersonation permissions. 
 
-To do this, an Exchange administrator will need to run the New-ManagementRoleAssignment command. The command they would need to run is:
+To do this, an Exchange administrator will need to run the **New-ManagementRoleAssignment** command. The command they would need to run is:
 
-New-ManagementRoleAssignment -Name:”EWSImpersonationForBankHoliday” -Role:ApplicationImpersonation -User:SomeAccount@Contoso.Com
+*New-ManagementRoleAssignment -Name:”EWSImpersonationForBankHoliday” -Role:ApplicationImpersonation -User:SomeAccount@Contoso.Com*
 
 Without this, you won’t be able to run the Get, Add or Remove cmdlets on multiple mailboxes. 
 
